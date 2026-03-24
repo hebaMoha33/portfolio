@@ -39,7 +39,7 @@ function App() {
         <img src="/me.jpg" alt="هبه الله محمد النور" className="profile-img"/>
         <h1>هبه الله محمد النور</h1>
         <p className="subtitle">Web & Mobile App Developer | SEO Specialist</p>
-        <a className="cta" href="https://wa.me/966543519328" target="_blank">💬 احجز الآن</a>
+        <a className="cta" href="https://wa.me/966543519328" target="_blank" rel="noreferrer">💬 احجز الآن</a>
       </header>
 
       {/* About */}
@@ -96,10 +96,9 @@ function App() {
         <div className="project-card" data-aos="fade-right">
           <h3>Ofoq Almatanah</h3>
           <p>
-            موقع احترافي لشركة استشارات هندسية في الرياض، يعرض الباقات والخدمات بطريقة تسويقية
-            تساعد العميل على اتخاذ القرار بسرعة.
+            موقع احترافي لشركة استشارات هندسية في الرياض، يعرض الباقات والخدمات بطريقة تسويقية تساعد العميل على اتخاذ القرار بسرعة.
           </p>
-          <a href="https://www.ofoq-almatanah.com/" target="_blank">زيارة الموقع</a>
+          <a href="https://www.ofoq-almatanah.com/" target="_blank" rel="noreferrer">زيارة الموقع</a>
         </div>
 
         <div className="project-card" data-aos="fade-left">
@@ -107,7 +106,7 @@ function App() {
           <p>
             موقع لخدمة المساج المنزلي، تصميم هادئ يعكس الراحة والفخامة، مع إبراز آراء العملاء لزيادة الثقة.
           </p>
-          <a href="https://relaxation-time.vercel.app/" target="_blank">زيارة الموقع</a>
+          <a href="https://relaxation-time.vercel.app/" target="_blank" rel="noreferrer">زيارة الموقع</a>
         </div>
       </section>
 
@@ -126,7 +125,7 @@ function App() {
         </div>
       </section>
 
-      {/* Lightbox افتراضي */}
+      {/* Lightbox */}
       {open && (
         <div className="lightbox" onClick={handleClose}>
           <img src={currentImg} alt="" />
@@ -134,7 +133,7 @@ function App() {
       )}
 
       {/* WhatsApp Button */}
-      <a className="whatsapp" href="https://wa.me/966543519328" target="_blank">
+      <a className="whatsapp" href="https://wa.me/966543519328" target="_blank" rel="noreferrer">
         <FaWhatsapp size={28} />
       </a>
 
