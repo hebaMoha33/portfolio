@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaWhatsapp, FaArrowLeft, FaTimes } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
@@ -19,33 +19,38 @@ function App() {
 
   const projects = [
     {
-      title: "مكتب أفق المتاهة للاستشارات الهندسية",
+      title: "أفق المتانة للاستشارات الهندسية",
+      category: "موقع مكتب هندسي",
       description:
-        "موقع احترافي لمكتب هندسي يعرض الخدمات والمشاريع ويساعد العملاء على التواصل بسهولة.",
+        "تصميم وتطوير موقع تعريفي متكامل لمكتب هندسي في الرياض، يعرض خدمات التصميم المعماري والباقات والمشاريع وخدمات إصدار رخص البناء.",
       link: "https://www.ofoq-almatanah.com/"
     },
     {
       title: "Relaxation Time",
+      category: "موقع خدمات وعناية",
       description:
-        "موقع لخدمات العناية والاسترخاء بتصميم هادئ وجذاب وتجربة استخدام سهلة.",
+        "موقع عصري لخدمات العناية والاسترخاء، بواجهة هادئة وتجربة استخدام سهلة تساعد العميل على استكشاف الخدمات والتواصل بسرعة.",
       link: "https://relaxation-time.vercel.app/"
     },
     {
-      title: "المشروع الأول",
+      title: "موقع خدمات احترافي",
+      category: "تصميم وتطوير ويب",
       description:
-        "تصميم وتطوير موقع ويب احترافي ومتوافق مع مختلف أحجام الشاشات.",
+        "موقع متجاوب بتصميم حديث وتنظيم واضح للمحتوى، يعمل بكفاءة على أجهزة الكمبيوتر والهواتف المحمولة.",
       link: "https://project-ten-lac-91.vercel.app/"
     },
     {
       title: "Saftex",
+      category: "موقع تعريفي",
       description:
-        "موقع إلكتروني حديث بتصميم منظم وسهل الاستخدام ومتوافق مع أجهزة الجوال والكمبيوتر.",
+        "موقع إلكتروني حديث بواجهة منظمة وسهلة الاستخدام، يقدّم المحتوى والخدمات بصورة واضحة ومتوافقة مع مختلف الشاشات.",
       link: "https://saftex-orcin.vercel.app/"
     },
     {
       title: "رفقة البقرة",
+      category: "منصة إلكترونية",
       description:
-        "منصة إلكترونية بتجربة استخدام واضحة وواجهة متوافقة مع مختلف الأجهزة.",
+        "منصة إلكترونية ذات طابع هادئ، صُممت لتقديم المحتوى بصورة واضحة وبسيطة مع سهولة التصفح عبر الجوال والكمبيوتر.",
       link: "https://refqat-albaqarah.vercel.app/"
     }
   ];
@@ -53,21 +58,23 @@ function App() {
   const stores = [
     {
       title: "متجر الهدهد الخليجية",
+      category: "متجر إلكتروني",
       description:
-        "تصميم وتطوير متجر إلكتروني احترافي لعرض المنتجات بصورة واضحة وتوفير تجربة تسوق سهلة.",
+        "تطوير وتنظيم متجر إلكتروني لعرض المنتجات بطريقة واضحة، مع تحسين تجربة التسوق وسهولة الوصول إلى الأقسام والمنتجات.",
       link: "https://alhudhud-gcc.com/"
     },
     {
       title: "متجر هدهد إيليت",
+      category: "متجر على منصة زد",
       description:
-        "متجر إلكتروني احترافي مع تنظيم المنتجات وتحسين تجربة المستخدم وسهولة الوصول إلى المنتجات.",
+        "تصميم وتنظيم متجر متخصص في الأجهزة الإلكترونية، مع ترتيب الأقسام والمنتجات وتحسين المحتوى وتجربة المستخدم.",
       link: "https://hudhudelite.com/"
     }
   ];
 
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 900,
       once: true
     });
   }, []);
@@ -104,7 +111,8 @@ function App() {
           target="_blank"
           rel="noreferrer"
         >
-          💬 احجز الآن
+          <FaWhatsapp />
+          احجز الآن
         </a>
       </header>
 
@@ -112,7 +120,7 @@ function App() {
       <section data-aos="fade-up">
         <h2>نبذة عني</h2>
 
-        <p>
+        <p className="section-description">
           مطورة تطبيقات ومواقع حاصلة على بكالوريوس علوم الحاسب بمرتبة
           الشرف. أعمل على تطوير تطبيقات الأندرويد ومواقع الويب، وتصميم
           وتطوير المتاجر الإلكترونية على منصتي زد وسلة، وتحسين محركات
@@ -126,10 +134,10 @@ function App() {
 
         <div className="services">
           <div className="service-card" data-aos="zoom-in">
-            <h3>تطوير مواقع ويب</h3>
+            <h3>تطوير مواقع الويب</h3>
             <p>
-              تصميم مواقع احترافية متوافقة مع جميع الأجهزة وتحسين تجربة
-              المستخدم.
+              تصميم مواقع احترافية متجاوبة مع جميع الأجهزة، مع الاهتمام
+              بسرعة الموقع وسهولة الاستخدام.
             </p>
           </div>
 
@@ -140,8 +148,8 @@ function App() {
           >
             <h3>تصميم متاجر زد وسلة</h3>
             <p>
-              تصميم وتطوير متاجر إلكترونية احترافية مع تنظيم المنتجات
-              وتحسين تجربة التسوق.
+              تصميم وتنظيم المتاجر الإلكترونية وصفحات المنتجات وتحسين
+              تجربة التسوق.
             </p>
           </div>
 
@@ -152,7 +160,8 @@ function App() {
           >
             <h3>تطوير تطبيقات أندرويد</h3>
             <p>
-              تطبيقات أندرويد عملية وجذابة مع أداء سلس وتوافقية عالية.
+              تطوير تطبيقات أندرويد عملية وجذابة بأداء سلس وتوافقية
+              عالية.
             </p>
           </div>
 
@@ -161,9 +170,10 @@ function App() {
             data-aos="zoom-in"
             data-aos-delay="300"
           >
-            <h3>تحسين محركات البحث وGoogle Ads</h3>
+            <h3>SEO وGoogle Ads</h3>
             <p>
-              رفع ظهور موقعك في نتائج البحث وجذب العملاء المستهدفين.
+              تحسين ظهور المواقع في نتائج البحث وإدارة الحملات للوصول
+              إلى العملاء المستهدفين.
             </p>
           </div>
 
@@ -174,8 +184,8 @@ function App() {
           >
             <h3>تحليل البيانات</h3>
             <p>
-              تحليل البيانات واستخراج المعلومات التي تساعد على اتخاذ
-              القرارات المناسبة.
+              تحليل البيانات واستخراج معلومات تساعد على تطوير الأعمال
+              واتخاذ القرارات.
             </p>
           </div>
         </div>
@@ -191,67 +201,92 @@ function App() {
           <span>JavaScript</span>
           <span>React</span>
           <span>Android</span>
-          <span>تصميم متاجر زد</span>
-          <span>تصميم متاجر سلة</span>
+          <span>متاجر زد</span>
+          <span>متاجر سلة</span>
           <span>SEO</span>
           <span>Google Ads</span>
           <span>تحليل البيانات</span>
         </div>
       </section>
 
-      {/* Website Projects */}
+      {/* Projects */}
       <section data-aos="fade-up">
-        <h2>أعمالي في تصميم المواقع</h2>
+        <div className="section-heading">
+          <h2>أعمالي في تصميم المواقع</h2>
+          <p>مجموعة من المواقع والمنصات التي قمت بتصميمها وتطويرها.</p>
+        </div>
 
-        {projects.map((project) => (
-          <div
-            className="project-card"
-            data-aos="fade-up"
-            key={project.link}
-          >
-            <h3>{project.title}</h3>
-
-            <p>{project.description}</p>
-
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
+        <div className="projects-grid">
+          {projects.map((project) => (
+            <article
+              className="project-card"
+              data-aos="fade-up"
+              key={project.link}
             >
-              عرض المشروع
-            </a>
-          </div>
-        ))}
+              <span className="project-category">
+                {project.category}
+              </span>
+
+              <h3>{project.title}</h3>
+
+              <p>{project.description}</p>
+
+              <a
+                className="project-link"
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                زيارة المشروع
+                <FaArrowLeft />
+              </a>
+            </article>
+          ))}
+        </div>
       </section>
 
-      {/* Zid and Salla Stores */}
+      {/* Stores */}
       <section data-aos="fade-up">
-        <h2>أعمالي في متاجر زد وسلة</h2>
+        <div className="section-heading">
+          <h2>أعمالي في متاجر زد وسلة</h2>
+          <p>نماذج من المتاجر الإلكترونية التي عملت على تطويرها.</p>
+        </div>
 
-        {stores.map((store) => (
-          <div
-            className="project-card"
-            data-aos="fade-up"
-            key={store.link}
-          >
-            <h3>{store.title}</h3>
-
-            <p>{store.description}</p>
-
-            <a
-              href={store.link}
-              target="_blank"
-              rel="noreferrer"
+        <div className="projects-grid stores-grid">
+          {stores.map((store) => (
+            <article
+              className="project-card store-card"
+              data-aos="fade-up"
+              key={store.link}
             >
-              زيارة المتجر
-            </a>
-          </div>
-        ))}
+              <span className="project-category">
+                {store.category}
+              </span>
+
+              <h3>{store.title}</h3>
+
+              <p>{store.description}</p>
+
+              <a
+                className="project-link"
+                href={store.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                زيارة المتجر
+                <FaArrowLeft />
+              </a>
+            </article>
+          ))}
+        </div>
       </section>
 
       {/* Gallery */}
       <section data-aos="fade-up">
-        <h2>نماذج من تصاميمي</h2>
+        <div className="section-heading">
+          <h2>نماذج من تصاميمي</h2>
+          <p>اضغطي على أي تصميم لمشاهدته بالحجم الكامل.</p>
+        </div>
 
         <div className="gallery">
           {galleryImages.map((img, index) => (
@@ -266,12 +301,16 @@ function App() {
                 src={img}
                 alt={`نموذج تصميم ${index + 1}`}
               />
+
+              <span className="gallery-overlay">
+                عرض التصميم
+              </span>
             </button>
           ))}
         </div>
       </section>
 
-      {/* Image Preview */}
+      {/* Lightbox */}
       {open && (
         <div className="lightbox">
           <button
@@ -280,17 +319,17 @@ function App() {
             onClick={handleClose}
             aria-label="إغلاق الصورة"
           >
-            ×
+            <FaTimes />
           </button>
 
           <img
             src={currentImg}
-            alt="معاينة نموذج التصميم"
+            alt="معاينة التصميم"
           />
         </div>
       )}
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp */}
       <a
         className="whatsapp"
         href="https://wa.me/966543519328"
