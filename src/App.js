@@ -1,20 +1,68 @@
-import './App.css';
-import 'aos/dist/aos.css';
-import AOS from 'aos';
-import { useEffect, useState } from 'react';
-import { FaWhatsapp } from 'react-icons/fa';
+import { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import "./App.css";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const [currentImg, setCurrentImg] = useState('');
+  const [currentImg, setCurrentImg] = useState("");
 
   const galleryImages = [
-    '/p1.jpg',
-    '/p2.jpg',
-    '/p3.jpg',
-    '/p4.jpg',
-    '/p5.jpg',
-    '/p6.jpg'
+    "/p1.jpg",
+    "/p2.jpg",
+    "/p3.jpg",
+    "/p4.jpg",
+    "/p5.jpg",
+    "/p6.jpg"
+  ];
+
+  const projects = [
+    {
+      title: "مكتب أفق المتاهة للاستشارات الهندسية",
+      description:
+        "موقع احترافي لمكتب هندسي يعرض الخدمات والمشاريع ويساعد العملاء على التواصل بسهولة.",
+      link: "https://www.ofoq-almatanah.com/"
+    },
+    {
+      title: "Relaxation Time",
+      description:
+        "موقع لخدمات العناية والاسترخاء بتصميم هادئ وجذاب وتجربة استخدام سهلة.",
+      link: "https://relaxation-time.vercel.app/"
+    },
+    {
+      title: "المشروع الأول",
+      description:
+        "تصميم وتطوير موقع ويب احترافي ومتوافق مع مختلف أحجام الشاشات.",
+      link: "https://project-ten-lac-91.vercel.app/"
+    },
+    {
+      title: "Saftex",
+      description:
+        "موقع إلكتروني حديث بتصميم منظم وسهل الاستخدام ومتوافق مع أجهزة الجوال والكمبيوتر.",
+      link: "https://saftex-orcin.vercel.app/"
+    },
+    {
+      title: "رفقة البقرة",
+      description:
+        "منصة إلكترونية بتجربة استخدام واضحة وواجهة متوافقة مع مختلف الأجهزة.",
+      link: "https://refqat-albaqarah.vercel.app/"
+    }
+  ];
+
+  const stores = [
+    {
+      title: "متجر الهدهد الخليجية",
+      description:
+        "تصميم وتطوير متجر إلكتروني احترافي لعرض المنتجات بصورة واضحة وتوفير تجربة تسوق سهلة.",
+      link: "https://alhudhud-gcc.com/"
+    },
+    {
+      title: "متجر هدهد إيليت",
+      description:
+        "متجر إلكتروني احترافي مع تنظيم المنتجات وتحسين تجربة المستخدم وسهولة الوصول إلى المنتجات.",
+      link: "https://hudhudelite.com/"
+    }
   ];
 
   useEffect(() => {
@@ -31,14 +79,13 @@ function App() {
 
   const handleClose = () => {
     setOpen(false);
-    setCurrentImg('');
+    setCurrentImg("");
   };
 
   return (
     <div className="container">
-
       {/* Header */}
-      <header data-aos="fade-down" className="header">
+      <header className="header" data-aos="fade-down">
         <img
           src="/me.jpg"
           alt="هبه الله محمد النور"
@@ -66,10 +113,10 @@ function App() {
         <h2>نبذة عني</h2>
 
         <p>
-          مطورة تطبيقات ومواقع حاصلة على بكالوريوس علوم الحاسب
-          بمرتبة الشرف. أعمل على تطوير تطبيقات الأندرويد ومواقع الويب،
-          وتصميم وتطوير المتاجر الإلكترونية على منصتي زد وسلة،
-          وتحسين محركات البحث، وإدارة الحملات الإعلانية وتحليل البيانات.
+          مطورة تطبيقات ومواقع حاصلة على بكالوريوس علوم الحاسب بمرتبة
+          الشرف. أعمل على تطوير تطبيقات الأندرويد ومواقع الويب، وتصميم
+          وتطوير المتاجر الإلكترونية على منصتي زد وسلة، وتحسين محركات
+          البحث، وإدارة الحملات الإعلانية وتحليل البيانات.
         </p>
       </section>
 
@@ -80,10 +127,9 @@ function App() {
         <div className="services">
           <div className="service-card" data-aos="zoom-in">
             <h3>تطوير مواقع ويب</h3>
-
             <p>
-              تصميم مواقع احترافية متوافقة مع جميع الأجهزة
-              وتحسين تجربة المستخدم.
+              تصميم مواقع احترافية متوافقة مع جميع الأجهزة وتحسين تجربة
+              المستخدم.
             </p>
           </div>
 
@@ -93,10 +139,9 @@ function App() {
             data-aos-delay="100"
           >
             <h3>تصميم متاجر زد وسلة</h3>
-
             <p>
-              تصميم وتطوير متاجر إلكترونية احترافية على منصتي زد وسلة،
-              مع تنظيم المنتجات وتحسين تجربة التسوق.
+              تصميم وتطوير متاجر إلكترونية احترافية مع تنظيم المنتجات
+              وتحسين تجربة التسوق.
             </p>
           </div>
 
@@ -106,10 +151,8 @@ function App() {
             data-aos-delay="200"
           >
             <h3>تطوير تطبيقات أندرويد</h3>
-
             <p>
-              تطبيقات أندرويد عملية وجذابة مع الأداء السلس
-              والتوافقية العالية.
+              تطبيقات أندرويد عملية وجذابة مع أداء سلس وتوافقية عالية.
             </p>
           </div>
 
@@ -119,9 +162,8 @@ function App() {
             data-aos-delay="300"
           >
             <h3>تحسين محركات البحث وGoogle Ads</h3>
-
             <p>
-              رفع ظهور موقعك في نتائج البحث وجذب عملاء مستهدفين.
+              رفع ظهور موقعك في نتائج البحث وجذب العملاء المستهدفين.
             </p>
           </div>
 
@@ -131,10 +173,9 @@ function App() {
             data-aos-delay="400"
           >
             <h3>تحليل البيانات</h3>
-
             <p>
-              تحليل البيانات واستخراج المعلومات التي تساعد
-              على اتخاذ القرارات المناسبة.
+              تحليل البيانات واستخراج المعلومات التي تساعد على اتخاذ
+              القرارات المناسبة.
             </p>
           </div>
         </div>
@@ -162,134 +203,50 @@ function App() {
       <section data-aos="fade-up">
         <h2>أعمالي في تصميم المواقع</h2>
 
-        {/* المشروع القديم الأول */}
-        <div className="project-card" data-aos="fade-up">
-          <h3>مكتب أفق المتاهة للاستشارات الهندسية</h3>
-
-          <p>
-            موقع احترافي لمكتب هندسي، يعرض الخدمات والمشاريع
-            ويساعد العملاء على التواصل بسهولة.
-          </p>
-
-          <a
-            href="https://www.ofoq-almatanah.com/"
-            target="_blank"
-            rel="noreferrer"
+        {projects.map((project, index) => (
+          <div
+            className="project-card"
+            data-aos="fade-up"
+            key={project.link}
           >
-            عرض المشروع
-          </a>
-        </div>
+            <h3>{project.title}</h3>
 
-        {/* المشروع القديم الثاني */}
-        <div className="project-card" data-aos="fade-up">
-          <h3>Relaxation Time</h3>
+            <p>{project.description}</p>
 
-          <p>
-            موقع إلكتروني احترافي بتصميم هادئ وجذاب،
-            مع تجربة استخدام سهلة ومتوافقة مع مختلف الأجهزة.
-          </p>
-
-          <a
-            href="https://relaxation-time.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            عرض المشروع
-          </a>
-        </div>
-
-        {/* المشروع الجديد الأول */}
-        <div className="project-card" data-aos="fade-up">
-          <h3>المشروع الأول</h3>
-
-          <p>
-            تصميم وتطوير موقع ويب احترافي ومتوافق
-            مع مختلف أحجام الشاشات.
-          </p>
-
-          <a
-            href="https://project-ten-lac-91.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            عرض المشروع
-          </a>
-        </div>
-
-        {/* المشروع الجديد الثاني */}
-        <div className="project-card" data-aos="fade-up">
-          <h3>Saftex</h3>
-
-          <p>
-            موقع إلكتروني حديث بتصميم منظم وسهل الاستخدام،
-            ومتوافق مع أجهزة الجوال والكمبيوتر.
-          </p>
-
-          <a
-            href="https://saftex-orcin.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            عرض المشروع
-          </a>
-        </div>
-
-        {/* المشروع الجديد الثالث */}
-        <div className="project-card" data-aos="fade-up">
-          <h3>رفقة البقرة</h3>
-
-          <p>
-            منصة إلكترونية بتجربة استخدام بسيطة
-            وواجهة متوافقة مع مختلف الأجهزة.
-          </p>
-
-          <a
-            href="https://refqat-albaqarah.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            عرض المشروع
-          </a>
-        </div>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              عرض المشروع
+            </a>
+          </div>
+        ))}
       </section>
 
-      {/* Zid and Salla Stores */}
+      {/* Stores */}
       <section data-aos="fade-up">
         <h2>أعمالي في متاجر زد وسلة</h2>
 
-        <div className="project-card" data-aos="fade-up">
-          <h3>متجر الهدهد الخليجية</h3>
-
-          <p>
-            تصميم وتطوير متجر إلكتروني احترافي لعرض المنتجات
-            بصورة واضحة وتوفير تجربة تسوق سهلة.
-          </p>
-
-          <a
-            href="https://alhudhud-gcc.com/"
-            target="_blank"
-            rel="noreferrer"
+        {stores.map((store) => (
+          <div
+            className="project-card"
+            data-aos="fade-up"
+            key={store.link}
           >
-            زيارة المتجر
-          </a>
-        </div>
+            <h3>{store.title}</h3>
 
-        <div className="project-card" data-aos="fade-up">
-          <h3>متجر هدهد إيليت</h3>
+            <p>{store.description}</p>
 
-          <p>
-            متجر إلكتروني احترافي مع تنظيم المنتجات
-            وتحسين تجربة المستخدم وسهولة الوصول إلى المنتجات.
-          </p>
-
-          <a
-            href="https://hudhudelite.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            زيارة المتجر
-          </a>
-        </div>
+            <a
+              href={store.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              زيارة المتجر
+            </a>
+          </div>
+        ))}
       </section>
 
       {/* Gallery */}
@@ -299,7 +256,7 @@ function App() {
         <div className="gallery">
           {galleryImages.map((img, index) => (
             <img
-              key={index}
+              key={img}
               src={img}
               alt={`نموذج تصميم ${index + 1}`}
               onClick={() => handleOpen(img)}
@@ -310,7 +267,11 @@ function App() {
 
       {/* Image Preview */}
       {open && (
-        <div className="lightbox" onClick={handleClose}>
+        <div
+          className="lightbox"
+          onClick={handleClose}
+          role="presentation"
+        >
           <img
             src={currentImg}
             alt="معاينة التصميم"
@@ -319,7 +280,7 @@ function App() {
         </div>
       )}
 
-      {/* WhatsApp Button */}
+      {/* WhatsApp */}
       <a
         className="whatsapp"
         href="https://wa.me/966543519328"
@@ -329,7 +290,6 @@ function App() {
       >
         <FaWhatsapp />
       </a>
-
     </div>
   );
 }
