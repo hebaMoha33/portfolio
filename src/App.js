@@ -199,11 +199,11 @@ function App() {
         </div>
       </section>
 
-      {/* Projects */}
+      {/* Website Projects */}
       <section data-aos="fade-up">
         <h2>أعمالي في تصميم المواقع</h2>
 
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div
             className="project-card"
             data-aos="fade-up"
@@ -224,7 +224,7 @@ function App() {
         ))}
       </section>
 
-      {/* Stores */}
+      {/* Zid and Salla Stores */}
       <section data-aos="fade-up">
         <h2>أعمالي في متاجر زد وسلة</h2>
 
@@ -255,32 +255,42 @@ function App() {
 
         <div className="gallery">
           {galleryImages.map((img, index) => (
-            <img
-              key={img}
-              src={img}
-              alt={`نموذج تصميم ${index + 1}`}
+            <button
+              type="button"
+              className="gallery-button"
               onClick={() => handleOpen(img)}
-            />
+              key={img}
+              aria-label={`عرض نموذج التصميم ${index + 1}`}
+            >
+              <img
+                src={img}
+                alt={`نموذج تصميم ${index + 1}`}
+              />
+            </button>
           ))}
         </div>
       </section>
 
       {/* Image Preview */}
       {open && (
-        <div
-          className="lightbox"
-          onClick={handleClose}
-          role="presentation"
-        >
+        <div className="lightbox">
+          <button
+            type="button"
+            className="close-button"
+            onClick={handleClose}
+            aria-label="إغلاق الصورة"
+          >
+            ×
+          </button>
+
           <img
             src={currentImg}
-            alt="معاينة التصميم"
-            onClick={(event) => event.stopPropagation()}
+            alt="معاينة نموذج التصميم"
           />
         </div>
       )}
 
-      {/* WhatsApp */}
+      {/* WhatsApp Button */}
       <a
         className="whatsapp"
         href="https://wa.me/966543519328"
